@@ -1,16 +1,29 @@
-NAME = push_swap.a
+NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
-SRC = operations_push.c  operations_reverse_rotate.c  operations_rotate.c  operations_swap.c  parse.c  sort_large.c  sort_smail.c  stack_init.c  stack_utils.c
-OBJ = $(SRC:.c=.o)
+CFLAGS = -Wall -Werror -Wextra -g
+
+# add files when u add function in them <3
+SRC = main.c
+OBJ = $(SRC:%.c= $(BIN)/%.o)
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
+
+BIN = bin
+
 all: $(NAME)
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@ 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+
+$(BIN)/%.o: %.c
+	mkdir -p $(BIN)
+	$(CC) $(CFLAGS) -c $< -o $@
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+$(NAME): $(OBJ) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 clean:
-	rm -f $(OBJ)
+	rm -fr $(BIN)
+	make -C $(LIBFT_DIR) clean
 fclean: clean
 	rm -f $(NAME)
+	make -C $(LIBFT_DIR) fclean
 re: fclean all
 .PHONY: all clean fclean re
