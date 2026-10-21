@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaabed <yaabed@student.42amman.com>        +#+  +:+       +#+        */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/19 17:59:32 by yaabed            #+#    #+#             */
-/*   Updated: 2026/10/19 17:59:37 by yaabed           ###   ########.fr       */
+/*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/10/21 18:51:32 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include "libft/libft.h"
 
-typedef struct s_stack
-{
-	int				value;
-	struct s_stack	*next;
-}	t_stack;
 
 #endif
