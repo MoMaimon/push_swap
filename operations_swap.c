@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/22 12:50:07 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 13:43:11 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/10/22 17:18:58 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	swap(t_list **stack)
 {
 	t_list	*second;
 
-	if (!(*stack)->next)
+	if (!(*stack) || !(*stack)->next)
 		return (0);
 	second = (*stack)->next;
 	(*stack)->next = second->next;
