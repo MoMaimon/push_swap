@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/22 14:06:08 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 14:21:45 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/10/22 14:49:18 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ static int	rotate(t_list **stack)
 		return (0);
 	before_last = lst_getbeforelast(*stack);
 	before_last->next->next = *stack;
+	*stack = before_last->next;
 	before_last->next = NULL;
+	return (1);
 }
 
 int	rrx(t_data *data, char stack)

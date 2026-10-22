@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/22 13:56:15 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 14:04:12 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/10/22 14:33:06 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static int	rotate(t_list **stack)
 	last->next = *stack;
 	*stack = (*stack)->next;
 	last->next->next = NULL;
+	return (1);
 }
 
 int	rx(t_data *data, char stack)
