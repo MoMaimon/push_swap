@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/22 15:21:03 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 16:10:16 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/10/22 17:25:46 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	print_stacks(t_list *a, t_list *b)
 	// Print the footer exactly as shown in the image
 	printf("_\t_\n");
 	printf("a\tb\n");
+	printf("---------------------------\n");
 }
 
 int	main(void)
@@ -69,6 +70,8 @@ int	main(void)
 	data->bench->rra = 0;
 	data->bench->rrb = 0;
 	data->bench->rrr = 0;
+	data->strategy = ADAPTIVE;
+	data->bench->strategy = COMPLEX;
 	// b = NULL;
 	i = 0;
 	while (i < 5)
@@ -79,8 +82,10 @@ int	main(void)
 		i++;
 	}
 	get_disorder(data);
-	printf("[bench] disorder: %f\n", data->bench->disorder);
 	print_stacks(data->a, data->b);
-	printf("---------------------------\n");
+	ss(data);
+	rr(data);
+	rrr(data);
 	print_stacks(data->a, data->b);
+	print_bench(data);
 }
