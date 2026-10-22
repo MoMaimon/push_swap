@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/19 17:59:32 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 13:42:02 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/10/22 14:02:40 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ typedef struct s_data
 int		sx(t_data *data, char stack);
 void	ss(t_data *data);
 void	px(t_data *data, char stack);
-void	rx(t_data *data, char stack);
+int		rx(t_data *data, char stack);
 void	rr(t_data *data);
-void	rrx(t_data *data, char stack);
+int		rrx(t_data *data, char stack);
 void	rrr(t_data *data);
 
 #endif
