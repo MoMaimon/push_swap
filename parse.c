@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaabed <yaabed@student.42amman.com>        +#+  +:+       +#+        */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/21 15:07:10 by yaabed            #+#    #+#             */
-/*   Updated: 2026/10/24 17:18:53 by yaabed           ###   ########.fr       */
+/*   Created: 2026/10/21 15:07:10 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/10/26 18:02:31 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ int	parse_strategy(char *arg, t_data *data, int *flag)
 		data->strategy = COMPLEX;
 	else if (ft_strcmp("--adaptive", arg) == 0)
 		data->strategy = ADAPTIVE;
-	else if (ft_strcmp("--bench", arg) == 0)
-		data->bench->disorder = 1;
 	else
 		return (0);
 	*flag = 1;
@@ -76,7 +74,9 @@ int	process_arg(char *arg, t_data *data, int *flags, int *number)
 		return (parse_strategy(arg, data, &flags[0]));
 	if (ft_strcmp("--bench", arg) == 0 && !flags[1])
 	{
-		data->bench->enable = 1;
+		data->bench = malloc(sizeof(t_bench));
+		if (!data->bench)
+			return (0);
 		flags[1] = 1;
 		return (1);
 	}

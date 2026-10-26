@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
+/*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/19 17:59:32 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/24 17:17:54 by yaabed           ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/10/26 18:05:41 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef enum e_strategy
 
 typedef struct s_bench
 {
-	int			enable;
 	int			disorder;
 	t_strategy	strategy;
 	int			sa;
