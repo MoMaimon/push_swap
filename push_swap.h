@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.h                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/19 17:59:32 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 16:13:23 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/10/26 18:07:51 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stddef.h>
 # include "libft/libft.h"
 
 typedef enum e_strategy
@@ -60,5 +61,11 @@ int		rrx(t_data *data, char stack);
 void	rrr(t_data *data);
 void	get_disorder(t_data *data);
 void	print_bench(t_data *data);
+void	remove_stack(t_list **stack);
+int		add_number(t_list **stack, int value);
+int		read_input(int argc, char **argv, t_data *data);
+int		convert_number(const char *nptr, int *result);
+int		has_duplicate(t_list *stack, int number);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif
