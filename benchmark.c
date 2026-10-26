@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   benchmark.c                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/22 16:14:14 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 17:21:44 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   benchmark.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/22 16:14:14 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/10/26 19:29:30 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	print_disorder(t_bench *bench)
+static void	print_disorder(t_data *data)
 {
 	int		disorder;
 	char	*str;
 	size_t	i;
 
-	ft_putstr_fd("[bench] disorder:\t", 2);
-	disorder = (bench->disorder) * 10000;
+	disorder = (data->disorder) * 10000;
+	if (disorder == 10000)
+	{
+		ft_putstr_fd("100.00%\n", 2);
+		return ;
+	}
 	str = ft_itoa(disorder);
 	if (!str)
-		exit(1);
+		error(data);
 	i = 0;
-	while (i < 4)
+	while (i++ < 4)
 	{
-		if (i == 2)
+		if (i - 1 == 2)
 			ft_putchar_fd('.', 2);
-		if (4 - ft_strlen(str) > i)
+		if (4 - ft_strlen(str) > i - 1)
 			ft_putchar_fd('0', 2);
 		else
-			ft_putchar_fd(str[i - (4 - ft_strlen(str))], 2);
-		i++;
+			ft_putchar_fd(str[(i - 1) - (4 - ft_strlen(str))], 2);
 	}
 	ft_putstr_fd("%\n", 2);
 	free(str);
 }
 
-static void	print_start(t_data *data)
+static void	print_strat(t_data *data)
 {
 	t_strategy	data_strat;
 	t_strategy	chosen_strat;
@@ -114,8 +117,9 @@ void	print_bench(t_data *data)
 {
 	if (!data->bench)
 		return ;
-	print_disorder(data->bench);
-	print_start(data);
+	ft_putstr_fd("[bench] disorder:\t", 2);
+	print_disorder(data);
+	print_strat(data);
 	print_total_ops(data->bench);
 	print_ops(data->bench);
 	ft_putchar_fd('\n', 2);

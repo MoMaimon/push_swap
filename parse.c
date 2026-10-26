@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 15:07:10 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/26 18:02:31 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/10/26 18:53:48 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	is_strategy(char *arg)
 	else if (ft_strcmp("--complex", arg) == 0)
 		return (1);
 	else if (ft_strcmp("--adaptive", arg) == 0)
-		return (1);
-	else if (ft_strcmp("--bench", arg) == 0)
 		return (1);
 	else
 		return (0);

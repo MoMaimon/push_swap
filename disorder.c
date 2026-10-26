@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   disorder.c                                        :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/22 15:30:55 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 15:53:00 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   disorder.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/22 15:30:55 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/10/26 19:29:13 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	get_disorder(t_data *data)
 		}
 		a = a->next;
 	}
-	data->bench->disorder = (float) mistakes / pairs;
+	data->disorder = (float) mistakes / pairs;
 }

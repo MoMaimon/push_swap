@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/26 18:07:51 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/10/26 19:36:13 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef enum e_strategy
 
 typedef struct s_bench
 {
-	float		disorder;
 	t_strategy	strategy;
 	int			sa;
 	int			sb;
@@ -49,6 +48,7 @@ typedef struct s_data
 	t_list		*a;
 	t_list		*b;
 	t_strategy	strategy;
+	float		disorder;
 	t_bench		*bench;
 }	t_data;
 
@@ -67,5 +67,6 @@ int		read_input(int argc, char **argv, t_data *data);
 int		convert_number(const char *nptr, int *result);
 int		has_duplicate(t_list *stack, int number);
 int		ft_strcmp(const char *s1, const char *s2);
-
+void	error(t_data *data);
+void	init_bench(t_data *data);
 #endif
