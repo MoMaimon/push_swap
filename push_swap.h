@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/26 19:36:13 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   push_swap.h                                       :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/19 17:59:32 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/10/27 20:02:31 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct s_data
 
 int		sx(t_data *data, char stack);
 void	ss(t_data *data);
-void	px(t_data *data, char stack);
+int		px(t_data *data, char stack);
 int		rx(t_data *data, char stack);
 void	rr(t_data *data);
 int		rrx(t_data *data, char stack);
@@ -69,4 +69,11 @@ int		has_duplicate(t_list *stack, int number);
 int		ft_strcmp(const char *s1, const char *s2);
 void	error(t_data *data);
 void	init_bench(t_data *data);
+int		get_bindex(t_data *data, int bno, int buckets, int largest);
+int		get_largest(t_data *data);
+int		get_bucket(int buckets, int largest, int num);
+int		ft_sqrt(int n);
+void	medium_sort(t_data *data);
+int		get_largestindx(t_list *node);
+
 #endif
