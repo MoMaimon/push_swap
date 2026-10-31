@@ -6,7 +6,7 @@
 /*   By: yaabed <yaabed@student.42amman.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 10:15:02 by yaabed            #+#    #+#             */
-/*   Updated: 2026/10/24 13:47:51 by yaabed           ###   ########.fr       */
+/*   Updated: 2026/10/28 20:00:59 by yaabed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,6 @@ int	convert_number(const char *nptr, int *result)
 		index++;
 	}
 	number *= signal;
-	*result = (int)number;
+	*result = (int)number;	
 	return (1);
 }

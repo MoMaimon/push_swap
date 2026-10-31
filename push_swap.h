@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/26 18:07:51 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/10/31 17:01:49 by yaabed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,15 @@ void	rrr(t_data *data);
 void	get_disorder(t_data *data);
 void	print_bench(t_data *data);
 void	remove_stack(t_list **stack);
+void	simple_sort(t_data *data);
+void	sort_a(t_data *data, int lo, int size);
+void	complex_sort(t_data *data);
+void	init_index(t_data *data);
 int		add_number(t_list **stack, int value);
 int		read_input(int argc, char **argv, t_data *data);
 int		convert_number(const char *nptr, int *result);
 int		has_duplicate(t_list *stack, int number);
 int		ft_strcmp(const char *s1, const char *s2);
+int		find_target_position(t_list *stack, int value);
 
 #endif

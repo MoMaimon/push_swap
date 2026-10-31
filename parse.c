@@ -6,10 +6,11 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 15:07:10 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/26 18:02:31 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/10/31 14:59:46 by yaabed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 #include "push_swap.h"
 #include <limits.h>
 #include <stddef.h>
@@ -52,6 +53,7 @@ int	edite_stack(char *arg, t_data *data, int *number)
 {
 	if (convert_number(arg, number))
 	{
+		*number = ft_atoi(arg);
 		if (has_duplicate(data->a, *number) || !add_number(&data->a, *number))
 		{
 			remove_stack(&data->a);
@@ -101,5 +103,6 @@ int	read_input(int argc, char **argv, t_data *data)
 			return (0);
 		index++;
 	}
+	init_index(data);
 	return (1);
 }
