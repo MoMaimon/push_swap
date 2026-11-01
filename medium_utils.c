@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   medium_utils.c                                    :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/27 13:03:52 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/27 20:28:59 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   medium_utils.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/27 13:03:52 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/10/28 17:48:40 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,28 +46,6 @@ int	get_bindex(t_data *data, int bno, int buckets, int largest)
 		node = node->next;
 	}
 	return (tempi);
-}
-
-int	get_largestindx(t_list *node)
-{
-	int	i;
-	int	maxi;
-	int	max;
-
-	i = 0;
-	maxi = 0;
-	max = *((int *) node->content);
-	while (node)
-	{
-		if (*((int *) node->content) > max)
-		{
-			max = *((int *) node->content);
-			maxi = i;
-		}
-		i++;
-		node = node->next;
-	}
-	return (maxi);
 }
 
 int	get_largest(t_data *data)
