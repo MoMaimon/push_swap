@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.h                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/19 17:59:32 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/01 13:55:50 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/01 17:07:29 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,5 @@ int		ft_sqrt(int n);
 void	medium_sort(t_data *data);
 int		get_largestindx(t_list *node);
 void	add_to_ops(t_data *data, char *op);
-
+void	multi_do(int(f)(t_data *, char), char stack, int times, t_data *d);
 #endif

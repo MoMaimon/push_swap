@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   medium.c                                          :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/27 12:58:25 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/27 21:03:57 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   medium.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/27 12:58:25 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/01 17:01:24 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	multi_do(int(f)(t_data *, char), char stack, int times, t_data *d)
-{
-	int	i;
-
-	i = 0;
-	while (i++ < times)
-		f(d, stack);
-}
 
 int	order_stack(t_data *data)
 {
@@ -31,6 +22,30 @@ int	order_stack(t_data *data)
 	else
 		multi_do(rrx, 'b', ft_lstsize(data->b) - i, data);
 	return (1);
+}
+
+int	get_place(int number, t_list *node, int n)
+{
+	int				maxi[2];
+	unsigned int	i;
+
+	maxi[0] = number;
+	maxi[1] = 0;
+	i = 0;
+	while (n < number && node)
+	{
+		if (number > maxi[0])
+		{
+			maxi[0] = number;
+			maxi[1] = i;
+		}
+		i++;
+		node = node->next;
+		if (!node)
+			break ;
+		number = *((int *)(node->content));
+	}
+	return (i);
 }
 
 void	put_in_place(t_data *data, int n)
@@ -48,21 +63,7 @@ void	put_in_place(t_data *data, int n)
 		return ;
 	}
 	number = *((int *)(node->content));
-	maxi[0] = number;
-	maxi[1] = 0;
-	while (n < number && node)
-	{
-		if (number > maxi[0])
-		{
-			maxi[0] = number;
-			maxi[1] = i;
-		}
-		i++;
-		node = node->next;
-		if (!node)
-			break ;
-		number = *((int *)(node->content));
-	}
+	i = get_place(number, node, n);
 	if (!node)
 		multi_do(rx, 'b', maxi[1], data);
 	else if (i == 0 || (unsigned int) i < ft_lstsize(data->b) / 2)
