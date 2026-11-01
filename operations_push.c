@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   operations_push.c                                 :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/22 13:45:12 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/01 13:56:29 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   operations_push.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/22 13:45:12 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/01 19:21:09 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ int	px(t_data *data, char stack)
 	{
 		if (!push(&(data->a), &(data->b)))
 			return (0);
-		add_to_ops(data, "pa");
+		add_to_ops(data, 1);
 	}
 	else if (stack == 'b')
 	{
 		if (!push(&(data->b), &(data->a)))
 			return (0);
-		add_to_ops(data, "pb");
+		add_to_ops(data, -1);
 	}
 	return (1);
 }

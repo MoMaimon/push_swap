@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   operations_swap.c                                 :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/22 12:50:07 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/01 13:58:36 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   operations_swap.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/22 12:50:07 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/01 19:22:30 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ int	sx(t_data *data, char stack)
 	{
 		if (!swap(&(data->a)))
 			return (0);
-		add_to_ops(data, "sa");
+		add_to_ops(data, 10);
 	}
 	else if (stack == 'b')
 	{
 		if (!swap(&(data->b)))
 			return (0);
-		add_to_ops(data, "sb");
+		add_to_ops(data, 100);
 	}
 	else
 		return (swap(&(data->b)) + swap(&(data->a)));
@@ -47,5 +47,5 @@ int	sx(t_data *data, char stack)
 void	ss(t_data *data)
 {
 	if (sx(data, 0))
-		add_to_ops(data, "ss");
+		add_to_ops(data, 110);
 }

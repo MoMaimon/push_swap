@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   operations_reverse_rotate.c                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/22 14:06:08 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/01 13:57:26 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   operations_reverse_rotate.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/22 14:06:08 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/01 19:21:44 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int	rrx(t_data *data, char stack)
 	{
 		if (!rotate(&(data->a)))
 			return (0);
-		add_to_ops(data, "rra");
+		add_to_ops(data, -1000);
 	}
 	else if (stack == 'b')
 	{
 		if (!rotate(&(data->b)))
 			return (0);
-		add_to_ops(data, "rrb");
+		add_to_ops(data, -10000);
 	}
 	else
 		return (rotate(&(data->b)) + rotate(&(data->a)));
@@ -59,5 +59,5 @@ int	rrx(t_data *data, char stack)
 void	rrr(t_data *data)
 {
 	if (rrx(data, 0))
-		add_to_ops(data, "rrr");
+		add_to_ops(data, -11000);
 }

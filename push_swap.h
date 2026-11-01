@@ -6,13 +6,12 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/01 17:07:29 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:15:27 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
@@ -76,6 +75,8 @@ int		get_bucket(int buckets, int largest, int num);
 int		ft_sqrt(int n);
 void	medium_sort(t_data *data);
 int		get_largestindx(t_list *node);
-void	add_to_ops(t_data *data, char *op);
+void	add_to_ops(t_data *data, int op);
 void	multi_do(int(f)(t_data *, char), char stack, int times, t_data *d);
+void	print_ops(t_data *data, t_list *ops);
+void	optimize(t_data *data);
 #endif
