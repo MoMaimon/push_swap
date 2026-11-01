@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/22 12:50:07 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 17:18:58 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/11/01 13:58:36 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,13 @@ int	sx(t_data *data, char stack)
 	{
 		if (!swap(&(data->a)))
 			return (0);
-		ft_putstr_fd("sa\n", 1);
-		if (data->bench)
-			data->bench->sa++;
+		add_to_ops(data, "sa");
 	}
 	else if (stack == 'b')
 	{
 		if (!swap(&(data->b)))
 			return (0);
-		ft_putstr_fd("sb\n", 1);
-		if (data->bench)
-			data->bench->sb++;
+		add_to_ops(data, "sb");
 	}
 	else
 		return (swap(&(data->b)) + swap(&(data->a)));
@@ -51,9 +47,5 @@ int	sx(t_data *data, char stack)
 void	ss(t_data *data)
 {
 	if (sx(data, 0))
-	{
-		ft_putstr_fd("ss\n", 1);
-		if (data->bench)
-			data->bench->ss++;
-	}
+		add_to_ops(data, "ss");
 }

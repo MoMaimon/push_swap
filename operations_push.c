@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/22 13:45:12 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/27 14:30:50 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/11/01 13:56:29 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,13 @@ int	px(t_data *data, char stack)
 	{
 		if (!push(&(data->a), &(data->b)))
 			return (0);
-		ft_putstr_fd("pa\n", 1);
-		if (data->bench)
-			data->bench->pa++;
+		add_to_ops(data, "pa");
 	}
 	else if (stack == 'b')
 	{
 		if (!push(&(data->b), &(data->a)))
 			return (0);
-		ft_putstr_fd("pb\n", 1);
-		if (data->bench)
-			data->bench->pb++;
+		add_to_ops(data, "pb");
 	}
 	return (1);
 }

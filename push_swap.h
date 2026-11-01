@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/19 17:59:32 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/27 20:02:31 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/11/01 13:55:50 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_data
 	t_strategy	strategy;
 	float		disorder;
 	t_bench		*bench;
+	t_list		*ops;
 }	t_data;
 
 int		sx(t_data *data, char stack);
@@ -75,5 +76,6 @@ int		get_bucket(int buckets, int largest, int num);
 int		ft_sqrt(int n);
 void	medium_sort(t_data *data);
 int		get_largestindx(t_list *node);
+void	add_to_ops(t_data *data, char *op);
 
 #endif

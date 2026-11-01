@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/22 13:56:15 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/22 14:33:06 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/11/01 13:57:58 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,13 @@ int	rx(t_data *data, char stack)
 	{
 		if (!rotate(&(data->a)))
 			return (0);
-		ft_putstr_fd("ra\n", 1);
-		if (data->bench)
-			data->bench->ra++;
+		add_to_ops(data, "ra");
 	}
 	else if (stack == 'b')
 	{
 		if (!rotate(&(data->b)))
 			return (0);
-		ft_putstr_fd("rb\n", 1);
-		if (data->bench)
-			data->bench->rb++;
+		add_to_ops(data, "rb");
 	}
 	else
 		return (rotate(&(data->b)) + rotate(&(data->a)));
@@ -51,9 +47,5 @@ int	rx(t_data *data, char stack)
 void	rr(t_data *data)
 {
 	if (rx(data, 0))
-	{
-		ft_putstr_fd("rr\n", 1);
-		if (data->bench)
-			data->bench->rr++;
-	}
+		add_to_ops(data, "rr");
 }

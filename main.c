@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/20 18:10:47 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/10/27 18:45:29 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/11/01 13:40:59 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	main(int argc, char **argv)
 	data.b = NULL;
 	data.strategy = ADAPTIVE;
 	data.bench = NULL;
+	data.ops = NULL;
 	if (argc == 1)
 		return (0);
 	if (!read_input(argc, argv, &data))
