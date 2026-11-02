@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/28 17:04:33 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/28 17:48:44 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   sort_utils.c                                      :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/28 17:04:33 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/02 20:49:18 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	multi_do(int(f)(t_data *, char), char stack, int times, t_data *d)
+void	multi_do(int (f)(t_data *, char), char stack, int times, t_data *d)
 {
 	int	i;
 

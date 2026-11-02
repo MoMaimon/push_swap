@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   optimization.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/01 13:59:44 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/01 19:26:40 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   optimization.c                                    :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/11/01 13:59:44 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/02 20:41:50 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,17 @@
 // sb <-> sb
 // sa + sb = ss
 
-int	check_redundant(void *first, void *second, t_list *ops, t_data *data)
+int	check_redundant(void *first, void *second, t_list **temp, t_data *data)
 {
-	t_list	*after;
-	int		sum;
+	int	sum;
 
-	after = ops->next->next->next;
 	sum = *((int *) first) + *((int *) second);
 	if (sum == 0 || sum == 20 || sum == 200)
-	{
-		ft_lstdelone(ops->next->next, free);
-		ft_lstdelone(ops->next, free);
-		ops->next = after;
 		return (1);
-	}
 	if (sum == 110 || sum == 11000 || sum == -11000)
 	{
-		ft_lstdelone(ops->next->next, free);
-		ft_lstdelone(ops->next, free);
-		ops->next = NULL;
-		if (!add_number(&ops, sum))
+		if (!add_number(temp, sum))
 			error(data);
-		ops->next->next = after;
 		return (1);
 	}
 	return (0);
@@ -51,19 +40,30 @@ int	check_redundant(void *first, void *second, t_list *ops, t_data *data)
 
 int	opt_clean(t_list *ops, t_data *data)
 {
-	t_list	*prev;
+	t_list	*temp;
 	int		i;
 
-	prev = ops;
-	ops = ops->next;
-	i = check_redundant(prev, ops, prev, data);
-	ops = ops->next;
-	while (ops)
+	ops = ops;
+	i = 0;
+	temp = NULL;
+	while (ops && ops->next)
 	{
-		i += check_redundant(prev->next->content, ops->content, prev, data);
+		if (check_redundant(ops->content, ops->next->content, &temp, data))
+		{
+			i++;
+			ops = ops->next;
+		}
+		else
+		{
+			if (!add_number(&temp, *(int *) ops->content))
+				error(data);
+		}
 		ops = ops->next;
-		prev = prev->next;
 	}
+	if (ops && !add_number(&temp, *(int *) ops->content))
+		error(data);
+	ft_lstclear(&data->ops, free);
+	data->ops = temp;
 	return (i);
 }
 
@@ -74,12 +74,8 @@ void	optimize(t_data *data)
 	ops = data->ops;
 	if (!ops || ft_lstsize(ops) < 2)
 		return ;
-	if (ft_lstsize(ops) == 2)
-	{
-		check_redundant(ops->content, ops->next->content, ops, data);
-		return ;
-	}
 	while (opt_clean(ops, data))
 	{
+		ops = data->ops;
 	}
 }

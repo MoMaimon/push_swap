@@ -76,7 +76,7 @@ int		ft_sqrt(int n);
 void	medium_sort(t_data *data);
 int		get_largestindx(t_list *node);
 void	add_to_ops(t_data *data, int op);
-void	multi_do(int(f)(t_data *, char), char stack, int times, t_data *d);
+void	multi_do(int (f)(t_data *, char), char stack, int times, t_data *d);
 void	print_ops(t_data *data, t_list *ops);
 void	optimize(t_data *data);
 #endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/20 18:10:47 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/01 20:22:58 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   main.c                                            :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/20 18:10:47 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/02 20:47:10 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,9 @@ int	main(int argc, char **argv)
 	get_disorder(&data);
 	if (data.bench)
 		init_bench(&data);
-	print_bench(&data);
 	medium_sort(&data);
-	print_ops(&data, data.ops);
 	optimize(&data);
 	print_ops(&data, data.ops);
-	get_disorder(&data);
 	print_bench(&data);
 	remove_stack(&data.a);
 	remove_stack(&data.b);
