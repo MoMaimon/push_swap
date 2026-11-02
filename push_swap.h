@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/31 17:01:49 by yaabed           ###   ########.fr       */
+/*   Updated: 2026/11/02 14:14:27 by yaabed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,21 @@ void	simple_sort(t_data *data);
 void	sort_a(t_data *data, int lo, int size);
 void	complex_sort(t_data *data);
 void	init_index(t_data *data);
+void	shift_a(t_data *data, int *pivot, int *pushed, int *rots);
+void	shift_b(t_data *data, int *pivot, int *pushed, int *rots);
 int		add_number(t_list **stack, int value);
 int		read_input(int argc, char **argv, t_data *data);
 int		convert_number(const char *nptr, int *result);
 int		has_duplicate(t_list *stack, int number);
 int		ft_strcmp(const char *s1, const char *s2);
 int		find_target_position(t_list *stack, int value);
+int		edite_stack(char *arg, t_data *data, int *number);
+int		is_strategy(char *arg);
+int		parse_strategy(char *arg, t_data *data, int *flag);
+int		process_input(char *argv, t_data *data, int *flags, int *number);
+int		process_arg(char *arg, t_data *data, int *flags, int *number);
+int		check_order(t_list *stack);
+int		check_size_a(t_data *data, int size);
+int		check_size_b(t_data *data, int size);
 
 #endif

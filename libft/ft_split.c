@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 13:52:21 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/01 19:03:45 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/02 11:09:03 by yaabed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static int	make_arr(char **arr, char *s, char c)
 	return (1);
 }
 
-static void	free_all(char **arr)
+void	free_all(char **arr)
 {
 	int	i;
 

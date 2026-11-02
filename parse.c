@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 15:07:10 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/31 14:59:46 by yaabed           ###   ########.fr       */
+/*   Updated: 2026/11/02 11:41:06 by yaabed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	edite_stack(char *arg, t_data *data, int *number)
 	return (0);
 }
 
-int	process_arg(char *arg, t_data *data, int *flags, int *number)
+/*int	process_arg(char *arg, t_data *data, int *flags, int *number)
 {
 	if (is_strategy(arg))
 		return (parse_strategy(arg, data, &flags[0]));
@@ -83,7 +83,7 @@ int	process_arg(char *arg, t_data *data, int *flags, int *number)
 		return (1);
 	}
 	return (!edite_stack(arg, data, number));
-}
+}*/
 
 int	read_input(int argc, char **argv, t_data *data)
 {
@@ -99,7 +99,7 @@ int	read_input(int argc, char **argv, t_data *data)
 		return (0);
 	while (index < argc)
 	{
-		if (!process_arg(argv[index], data, flags, &number))
+		if (!process_input(argv[index], data, flags, &number))
 			return (0);
 		index++;
 	}
