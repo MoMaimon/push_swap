@@ -71,7 +71,6 @@ void	error(t_data *data);
 void	init_bench(t_data *data);
 int		get_bindex(t_data *data, int bno, int buckets, int largest);
 int		get_largest(t_data *data);
-int		get_bucket(int buckets, int largest, int num);
 int		ft_sqrt(int n);
 void	medium_sort(t_data *data);
 int		get_largestindx(t_list *node);

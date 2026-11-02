@@ -69,29 +69,24 @@ int	is_negativ(const char nptr)
 
 int	convert_number(const char *nptr, int *result)
 {
-	long long	number;
-	long long	limit;
-	int			signal;
-	int			index;
+	int	number;
 
-	signal = 1;
-	index = 0;
 	number = 0;
 	if (is_valid_number(nptr))
 		return (0);
-	signal = is_negativ(nptr[index]);
-	if (signal == 1)
-		limit = INT_MAX;
-	else
-		limit = -(long long)INT_MIN;
-	while (nptr[index])
-	{
-		if (number > (((limit - (nptr[index] - '0')) / 10)))
-			return (0);
-		number = (number * 10) + (nptr[index] - '0');
-		index++;
-	}
-	number *= signal;
+	// signal = is_negativ(nptr[index]);
+	// if (signal == 1)
+	// 	limit = INT_MAX;
+	// else
+	// 	limit = -(long long)INT_MIN;
+	// while (nptr[index])
+	// {
+	// 	if (number > (((limit - (nptr[index] - '0')) / 10)))
+	// 		return (0);
+	// 	number = (number * 10) + (nptr[index] - '0');
+	// 	index++;
+	// }
+	number = ft_atoi(nptr);
 	*result = (int)number;
 	return (1);
 }

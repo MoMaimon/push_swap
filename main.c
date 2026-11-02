@@ -54,6 +54,7 @@ int	main(int argc, char **argv)
 	medium_sort(&data);
 	optimize(&data);
 	print_ops(&data, data.ops);
+	// print_stacks(data.a, data.b);
 	print_bench(&data);
 	remove_stack(&data.a);
 	remove_stack(&data.b);

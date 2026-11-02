@@ -87,7 +87,7 @@ static void	print_total_ops(t_bench *bench)
 	ft_putchar_fd('\n', 2);
 }
 
-static void	print_ops(t_bench *bench)
+static void	print_each_op(t_bench *bench)
 {
 	ft_putstr_fd("[bench] sa:\t", 2);
 	ft_putnbr_fd(bench->sa, 2);
@@ -121,6 +121,6 @@ void	print_bench(t_data *data)
 	print_disorder(data);
 	print_strat(data);
 	print_total_ops(data->bench);
-	print_ops(data->bench);
+	print_each_op(data->bench);
 	ft_putchar_fd('\n', 2);
 }

@@ -78,12 +78,17 @@ void	push_all(t_data *data, int size)
 {
 	int	i;
 
-	i = get_largestindx(data->b);
-	if (i == 0 || (unsigned int) i < ft_lstsize(data->b) / 2)
-		multi_do(rx, 'b', i, data);
-	else
-		multi_do(rrx, 'b', ft_lstsize(data->b) - i, data);
-	multi_do(px, 'a', size, data);
+	
+	while(size--)
+	{
+		i = get_largestindx(data->b);	
+		if (i == 0 || (unsigned int) i < ft_lstsize(data->b) / 2)
+			multi_do(rx, 'b', i, data);
+		else
+			multi_do(rrx, 'b', ft_lstsize(data->b) - i, data);
+		px(data, 'a');
+	}
+	// multi_do(px, 'a', size, data);
 }
 
 void	medium_sort(t_data *data)
@@ -96,7 +101,7 @@ void	medium_sort(t_data *data)
 
 	size = ft_lstsize(data->a);
 	largest = get_largest(data);
-	buckets = ft_sqrt(size);
+	buckets = ft_sqrt(size) / 2;
 	i = buckets - 1;
 	while (i >= 0)
 	{
@@ -107,10 +112,10 @@ void	medium_sort(t_data *data)
 				multi_do(rx, 'a', numi, data);
 			else
 				multi_do(rrx, 'a', ft_lstsize(data->a) - numi, data);
-			put_in_place(data, *((int *)(data->a->content)));
+			px(data,'b');
 			numi = get_bindex(data, i, buckets, largest);
 		}
-		i -= order_stack(data);
+		i -= 1;
 	}
 	push_all(data, size);
 }

@@ -12,15 +12,46 @@
 
 #include "push_swap.h"
 
-int	get_bucket(int buckets, int largest, int num)
+int	get_smallest(t_data *data)
 {
-	int	bucket_no;
+	int		smallest;
+	t_list	*node;
 
-	bucket_no = (buckets * num) / (largest + 1);
+	node = data->a;
+	smallest = *((int *) node->content);
+	node = node->next;
+	while (node)
+	{
+		if (*((int *) node->content) < smallest)
+			smallest = *((int *) node->content);
+		node = node->next;
+	}
+	return (smallest);
+}
+int	get_bucket(int buckets, int largest ,int num, t_data *data)
+{
+	// int	bucket_no;
+
+	// bucket_no = (buckets * num) / (largest + 1);
+	// return (bucket_no);
+	long long shifted_num;
+	long long range;
+	int       bucket_no;
+	int smallest;
+	smallest = get_smallest(data);
+
+	// Shift the numbers so the minimum value becomes 0
+	shifted_num = (long long)num - (long long)smallest;
+	
+	// Calculate total range (+1 prevents division by zero)
+	range = (long long)largest - (long long)smallest + 1;
+
+	bucket_no = (int)((buckets * shifted_num) / range);
+	
 	return (bucket_no);
 }
 
-int	get_bindex(t_data *data, int bno, int buckets, int largest)
+int	get_bindex(t_data *data, int bno, int buckets, int large)
 {
 	unsigned int	i;
 	int				tempi;
@@ -32,7 +63,7 @@ int	get_bindex(t_data *data, int bno, int buckets, int largest)
 	i = 0;
 	while (i < (ft_lstsize(data->a) / 2))
 	{
-		if (get_bucket(buckets, largest, *((int *) node->content)) == bno)
+		if (get_bucket(buckets, large, *((int *) node->content), data) == bno)
 			return (i);
 		i++;
 		node = node->next;
@@ -40,7 +71,7 @@ int	get_bindex(t_data *data, int bno, int buckets, int largest)
 	tempi = -1;
 	while (node)
 	{
-		if (get_bucket(buckets, largest, *((int *) node->content)) == bno)
+		if (get_bucket(buckets, large, *((int *) node->content), data) == bno)
 			tempi = i;
 		i++;
 		node = node->next;
@@ -64,6 +95,8 @@ int	get_largest(t_data *data)
 	}
 	return (largest);
 }
+
+
 
 int	ft_sqrt(int n)
 {
