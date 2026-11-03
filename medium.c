@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:58:25 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/01 17:01:24 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/03 15:46:42 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,47 +48,21 @@ int	get_place(int number, t_list *node, int n)
 	return (i);
 }
 
-void	put_in_place(t_data *data, int n)
-{
-	unsigned int	i;
-	int				number;
-	int				maxi[2];
-	t_list			*node;
-
-	i = 0;
-	node = data->b;
-	if (!node)
-	{
-		px(data, 'b');
-		return ;
-	}
-	number = *((int *)(node->content));
-	i = get_place(number, node, n);
-	if (!node)
-		multi_do(rx, 'b', maxi[1], data);
-	else if (i == 0 || (unsigned int) i < ft_lstsize(data->b) / 2)
-		multi_do(rx, 'b', i, data);
-	else
-		multi_do(rrx, 'b', ft_lstsize(data->b) - i, data);
-	px(data, 'b');
-	order_stack(data);
-}
-
 void	push_all(t_data *data, int size)
 {
 	int	i;
+	int	nd_largest_i;
 
-	
-	while(size--)
+	while (size--)
 	{
-		i = get_largestindx(data->b);	
-		if (i == 0 || (unsigned int) i < ft_lstsize(data->b) / 2)
+		i = get_largestindx(data->b);
+		nd_largest_i = get_scndlargestindx(data->b);
+		if ((unsigned int) i < ft_lstsize(data->b) / 2)
 			multi_do(rx, 'b', i, data);
 		else
 			multi_do(rrx, 'b', ft_lstsize(data->b) - i, data);
 		px(data, 'a');
 	}
-	// multi_do(px, 'a', size, data);
 }
 
 void	medium_sort(t_data *data)
@@ -101,18 +75,18 @@ void	medium_sort(t_data *data)
 
 	size = ft_lstsize(data->a);
 	largest = get_largest(data);
-	buckets = ft_sqrt(size) / 2;
+	buckets = max(1, ft_sqrt(size) / 2);
 	i = buckets - 1;
 	while (i >= 0)
 	{
 		numi = get_bindex(data, i, buckets, largest);
 		while (numi != -1)
 		{
-			if ((unsigned int) numi < size / 2)
+			if ((unsigned int) numi < ft_lstsize(data->a) / 2)
 				multi_do(rx, 'a', numi, data);
 			else
 				multi_do(rrx, 'a', ft_lstsize(data->a) - numi, data);
-			px(data,'b');
+			px(data, 'b');
 			numi = get_bindex(data, i, buckets, largest);
 		}
 		i -= 1;

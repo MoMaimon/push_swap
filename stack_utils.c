@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:22:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/26 18:34:49 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/03 15:43:43 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,13 @@ void	remove_stack(t_list **stack)
 	if (!stack)
 		return ;
 	ft_lstclear(stack, free);
+}
+
+int	max(int first, int second)
+{
+	if (first > second)
+		return (first);
+	return (second);
 }
 
 void	error(t_data *data)

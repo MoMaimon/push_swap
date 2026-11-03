@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/01 20:15:27 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/03 15:45:11 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,9 @@ int		ft_sqrt(int n);
 void	medium_sort(t_data *data);
 int		get_largestindx(t_list *node);
 void	add_to_ops(t_data *data, int op);
-void	multi_do(int (f)(t_data *, char), char stack, int times, t_data *d);
+void	multi_do(int(f)(t_data *, char), char stack, int times, t_data *d);
 void	print_ops(t_data *data, t_list *ops);
 void	optimize(t_data *data);
+int		get_scndlargestindx(t_list *node);
+int		max(int first, int second);
 #endif

@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 13:03:52 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/28 17:48:40 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/03 15:22:07 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,18 @@ int	get_smallest(t_data *data)
 	}
 	return (smallest);
 }
-int	get_bucket(int buckets, int largest ,int num, t_data *data)
+
+int	get_bucket(int buckets, int largest, int num, t_data *data)
 {
-	// int	bucket_no;
+	long long	shifted_num;
+	long long	range;
+	int			bucket_no;
+	int			smallest;
 
-	// bucket_no = (buckets * num) / (largest + 1);
-	// return (bucket_no);
-	long long shifted_num;
-	long long range;
-	int       bucket_no;
-	int smallest;
 	smallest = get_smallest(data);
-
-	// Shift the numbers so the minimum value becomes 0
-	shifted_num = (long long)num - (long long)smallest;
-	
-	// Calculate total range (+1 prevents division by zero)
-	range = (long long)largest - (long long)smallest + 1;
-
+	shifted_num = (long long) num - (long long) smallest;
+	range = (long long) largest - (long long) smallest + 1;
 	bucket_no = (int)((buckets * shifted_num) / range);
-	
 	return (bucket_no);
 }
 
@@ -95,8 +87,6 @@ int	get_largest(t_data *data)
 	}
 	return (largest);
 }
-
-
 
 int	ft_sqrt(int n)
 {

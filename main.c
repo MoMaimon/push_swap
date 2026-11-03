@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   main.c                                            :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/20 18:10:47 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/02 20:47:10 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/20 18:10:47 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/03 15:14:48 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	main(int argc, char **argv)
 	medium_sort(&data);
 	optimize(&data);
 	print_ops(&data, data.ops);
-	// print_stacks(data.a, data.b);
 	print_bench(&data);
 	remove_stack(&data.a);
 	remove_stack(&data.b);
