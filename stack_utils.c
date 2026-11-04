@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/22 15:22:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/03 15:43:43 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   stack_utils.c                                     :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/22 15:22:32 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/04 16:40:58 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,24 @@ int	max(int first, int second)
 
 void	error(t_data *data)
 {
-	remove_stack(&(data->a));
-	remove_stack(&(data->b));
-	free(data->bench);
+	if (data)
+	{
+		remove_stack(&(data->a));
+		remove_stack(&(data->b));
+		remove_stack(&(data->ops));
+		free(data->bench);
+	}
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
+}
+
+void	init_data(t_data *data)
+{
+	data->a = NULL;
+	data->b = NULL;
+	data->strategy = ADAPTIVE;
+	data->ops = NULL;
+	data->bench = malloc(sizeof(t_bench));
+	if (!data->bench)
+		error(data);
 }

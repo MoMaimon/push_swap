@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/09/23 12:16:43 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/09/30 17:26:14 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/11/04 16:01:08 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*d)(void *));
+char			*get_next_line(int fd);
 #endif

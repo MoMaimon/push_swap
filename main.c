@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/20 18:10:47 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/03 15:14:48 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   main.c                                            :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/20 18:10:47 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/04 16:40:50 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,7 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	data.a = NULL;
-	data.b = NULL;
-	data.strategy = ADAPTIVE;
-	data.bench = malloc(sizeof(t_bench));
-	data.ops = NULL;
+	init_data(&data);
 	if (argc == 1)
 		return (0);
 	if (!read_input(argc, argv, &data))
