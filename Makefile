@@ -38,7 +38,7 @@ clean:
 	make -C $(LIBFT_DIR) clean
 	
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 	make -C $(LIBFT_DIR) fclean
 re: fclean all
 .PHONY: all clean fclean re bonus
