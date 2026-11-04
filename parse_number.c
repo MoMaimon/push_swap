@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parse_number.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yaabed <yaabed@student.42amman.com>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/24 10:15:02 by yaabed            #+#    #+#             */
-/*   Updated: 2026/10/24 13:47:51 by yaabed           ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   parse_number.c                                    :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/24 10:15:02 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/04 13:21:19 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	has_duplicate(t_list *stack, int number)
 
 	while (stack)
 	{
-		value = (int *)stack->content;
+		value = (int *) stack->content;
 		if (*value == number)
 			return (1);
 		stack = stack->next;
@@ -74,19 +74,7 @@ int	convert_number(const char *nptr, int *result)
 	number = 0;
 	if (is_valid_number(nptr))
 		return (0);
-	// signal = is_negativ(nptr[index]);
-	// if (signal == 1)
-	// 	limit = INT_MAX;
-	// else
-	// 	limit = -(long long)INT_MIN;
-	// while (nptr[index])
-	// {
-	// 	if (number > (((limit - (nptr[index] - '0')) / 10)))
-	// 		return (0);
-	// 	number = (number * 10) + (nptr[index] - '0');
-	// 	index++;
-	// }
 	number = ft_atoi(nptr);
-	*result = (int)number;
+	*result = (int) number;
 	return (1);
 }

@@ -51,17 +51,22 @@ int	get_place(int number, t_list *node, int n)
 void	push_all(t_data *data, int size)
 {
 	int	i;
-	int	nd_largest_i;
+	int	nxt_largest;
 
 	while (size--)
 	{
 		i = get_largestindx(data->b);
-		nd_largest_i = get_scndlargestindx(data->b);
-		if ((unsigned int) i < ft_lstsize(data->b) / 2)
-			multi_do(rx, 'b', i, data);
+		nxt_largest = get_scndlargestindx(data->b);
+		if (!is_largest_closer(i, nxt_largest, size + 1) && size > 1)
+			size -= sort_next_largest(data, i, nxt_largest, size);
 		else
-			multi_do(rrx, 'b', ft_lstsize(data->b) - i, data);
-		px(data, 'a');
+		{
+			if (i < (size + 1) / 2)
+				multi_do(rx, 'b', i, data);
+			else
+				multi_do(rrx, 'b', size + 1 - i, data);
+			px(data, 'a');
+		}
 	}
 }
 
