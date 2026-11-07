@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   parse_number.c                                    :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/24 10:15:02 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/04 13:21:19 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   parse_number.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/24 10:15:02 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/07 14:06:44 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 	number_loop = 0;
 	while (s1[number_loop] != '\0' && s2[number_loop] != '\0'
-		&& (s1[number_loop] == s2[number_loop]))
+			&& (s1[number_loop] == s2[number_loop]))
 	{
 		number_loop++;
 	}

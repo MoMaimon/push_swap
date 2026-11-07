@@ -4,10 +4,10 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -g
 
 # add files when u add function in them <3
-SRC = main.c operations_push.c operations_reverse_rotate.c operations_rotate.c operations_swap.c disorder.c benchmark.c parse.c stack_utils.c parse_number.c bench_init.c medium.c medium_utils.c optimization_utils.c optimization.c sort_utils.c
+SRC = main.c operations_push.c operations_reverse_rotate.c operations_rotate.c operations_swap.c disorder.c benchmark.c parse.c stack_utils.c parse_number.c bench_init.c medium.c medium_utils.c optimization_utils.c optimization.c sort_utils.c sort_smpile.c sort_smpile_utils.c stack_init.c sort_complex.c process_parse.c
 OBJ = $(SRC:%.c= $(BIN)/%.o)
 
-SRC_BONUS = checker_bonus.c operations_push.c operations_reverse_rotate.c operations_rotate.c operations_swap.c disorder.c benchmark.c parse.c stack_utils.c parse_number.c bench_init.c medium.c medium_utils.c optimization_utils.c optimization.c sort_utils.c
+SRC_BONUS = checker_bonus.c operations_push.c operations_reverse_rotate.c operations_rotate.c operations_swap.c disorder.c benchmark.c parse.c stack_utils.c parse_number.c bench_init.c medium.c medium_utils.c optimization_utils.c optimization.c sort_utils.c sort_smpile.c sort_smpile_utils.c stack_init.c sort_complex.c process_parse.c
 
 OBJ_BONUS = $(SRC_BONUS:%.c= $(BIN)/%.o)
 

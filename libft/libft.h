@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   libft.h                                           :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/23 12:16:43 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/04 16:01:08 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/23 12:16:43 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/07 14:05:42 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 typedef struct s_list
 {
+	int				index;
 	void			*content;
 	struct s_list	*next;
 }	t_list;
@@ -30,6 +31,7 @@ int				ft_isprint(int c);
 size_t			ft_strlen(const char *s);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
+void			free_all(char **arr);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 void			*ft_memcpy(void *dest, const void *src, size_t n);

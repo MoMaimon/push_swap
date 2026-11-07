@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.h                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/19 17:59:32 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/04 16:35:13 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/07 14:05:19 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,12 @@ void	rrr(t_data *data);
 void	get_disorder(t_data *data);
 void	print_bench(t_data *data);
 void	remove_stack(t_list **stack);
+void	simple_sort(t_data *data);
+void	sort_a(t_data *data, int lo, int size);
+void	complex_sort(t_data *data);
+void	init_index(t_data *data);
+void	shift_a(t_data *data, int *pivot, int *pushed, int *rots);
+void	shift_b(t_data *data, int *pivot, int *pushed, int *rots);
 int		add_number(t_list **stack, int value);
 int		read_input(int argc, char **argv, t_data *data);
 int		convert_number(const char *nptr, int *result);
@@ -83,4 +89,14 @@ int		max(int first, int second);
 int		is_largest_closer(int largest, int nxt_largest, int size);
 int		sort_next_largest(t_data *data, int largest, int nxt_largest, int size);
 void	init_data(t_data *data);
+int		find_target_position(t_list *stack, int value);
+int		edite_stack(char *arg, t_data *data, int *number);
+int		is_strategy(char *arg);
+int		parse_strategy(char *arg, t_data *data, int *flag);
+int		process_input(char *argv, t_data *data, int *flags, int *number);
+int		process_arg(char *arg, t_data *data, int *flags, int *number);
+int		check_order(t_list *stack);
+int		check_size_a(t_data *data, int size);
+int		check_size_b(t_data *data, int size);
+
 #endif
