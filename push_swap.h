@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/07 14:05:19 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/07 14:14:56 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef enum e_strategy
 typedef struct s_bench
 {
 	t_strategy	strategy;
+	int			enabled;
 	int			sa;
 	int			sb;
 	int			ss;

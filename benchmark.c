@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 16:14:14 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/10/26 19:29:30 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/07 14:44:10 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	print_strat(t_data *data)
 	else if (data_strat == MEDIUM)
 		ft_putstr_fd("Medium / O(n√n)\n", 2);
 	else if (data_strat == COMPLEX)
-		ft_putstr_fd("Medium / O(n log n)\n", 2);
+		ft_putstr_fd("Complex / O(n log n)\n", 2);
 	else
 	{
 		if (chosen_strat == SIMPLE)

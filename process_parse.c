@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_parse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaabed <yaabed@student.42amman.com>        +#+  +:+       +#+        */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/02 11:18:59 by yaabed            #+#    #+#             */
-/*   Updated: 2026/11/02 11:33:01 by yaabed           ###   ########.fr       */
+/*   Created: 2026/11/02 11:18:59 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/07 14:36:13 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ int	process_arg(char *arg, t_data *data, int *flags, int *number)
 		return (parse_strategy(arg, data, &flags[0]));
 	if (ft_strcmp("--bench", arg) == 0 && !flags[1])
 	{
-		data->bench = malloc(sizeof(t_bench));
-		if (!data->bench)
-			return (0);
+		data->bench->enabled = 1;
 		flags[1] = 1;
 		return (1);
 	}

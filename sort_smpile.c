@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_smpile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaabed <yaabed@student.42amman.com>        +#+  +:+       +#+        */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/26 10:14:55 by yaabed            #+#    #+#             */
-/*   Updated: 2026/10/28 20:56:51 by yaabed           ###   ########.fr       */
+/*   Created: 2026/10/26 10:14:55 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/07 14:26:08 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
-#include <stdio.h>
+// #include <limits.h>
+// #include <stdio.h>
 
 int	max_stack(t_data data)
 {
@@ -21,8 +21,8 @@ int	max_stack(t_data data)
 	max_value = INT_MIN;
 	while (data.b != NULL)
 	{
-		if (max_value < *(int *)data.b->content)
-			max_value = *(int *)data.b->content;
+		if (max_value < *(int *) data.b->content)
+			max_value = *(int *) data.b->content;
 		data.b = data.b->next;
 	}
 	return (max_value);
@@ -30,7 +30,7 @@ int	max_stack(t_data data)
 
 void	rotat_stack(t_data *data)
 {
-	while (*(int *)data->b->content != max_stack(*data))
+	while (*(int *) data->b->content != max_stack(*data))
 		rrx(data, 'b');
 }
 
@@ -70,7 +70,7 @@ void	simple_sort(t_data *data)
 
 	while (data->a != NULL)
 	{
-		value = *(int *)data->a->content;
+		value = *(int *) data->a->content;
 		index = find_insert_position(data->b, value, &flag);
 		while (index > 0)
 		{

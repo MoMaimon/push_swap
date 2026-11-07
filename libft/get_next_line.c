@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   get_next_line.c                                   :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/03 17:44:44 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/04 16:39:14 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/03 17:44:44 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/07 14:24:50 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	get_until_new_line(int fd, char **buffer, char **line)
 	return (1);
 }
 
-char	*free_all(char **buffer, char *line)
+static char	*free_all_gnl(char **buffer, char *line)
 {
 	free(*buffer);
 	*buffer = NULL;
@@ -90,11 +90,11 @@ char	*get_next_line(int fd)
 	{
 		temp = handle_remain(&line, &buffer[fd], 0);
 		if (!temp)
-			return (free_all(&buffer[fd], line));
+			return (free_all_gnl(&buffer[fd], line));
 		else if (temp == 1)
 			return (line);
 	}
 	if (!get_until_new_line(fd, &buffer[fd], &line))
-		return (free_all(&buffer[fd], line));
+		return (free_all_gnl(&buffer[fd], line));
 	return (line);
 }

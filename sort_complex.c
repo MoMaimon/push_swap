@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   sort_complex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaabed <yaabed@student.42amman.com>        +#+  +:+       +#+        */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/31 12:34:15 by yaabed            #+#    #+#             */
-/*   Updated: 2026/11/02 14:18:15 by yaabed           ###   ########.fr       */
+/*   Created: 2026/10/31 12:34:15 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/07 14:25:44 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 void	sort_b(t_data *data, int lo, int size)
 {
-	int		pivot;
-	int		pushed;
-	int		rots;
-	int		count;
+	int	pivot;
+	int	pushed;
+	int	rots;
+	int	count;
 
 	if (check_size_b(data, size))
 		return ;
@@ -42,10 +41,10 @@ void	sort_b(t_data *data, int lo, int size)
 
 void	sort_a(t_data *data, int lo, int size)
 {
-	int		pivot;
-	int		pushed;
-	int		rots;
-	int		count;
+	int	pivot;
+	int	pushed;
+	int	rots;
+	int	count;
 
 	if (check_size_a(data, size))
 		return ;
