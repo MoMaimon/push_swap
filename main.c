@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 18:10:47 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/07 14:43:35 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/08 18:44:30 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ int	main(int argc, char **argv)
 	print_ops(&data, data.ops);
 	if (data.bench->enabled)
 		print_bench(&data);
-	remove_stack(&data.a);
-	remove_stack(&data.b);
-	if (data.bench)
-		free(data.bench);
+	remove_stack(&(data.a));
+	remove_stack(&(data.b));
+	remove_stack(&(data.ops));
+	free(data.bench);
 	return (0);
 }
