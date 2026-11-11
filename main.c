@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/20 18:10:47 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/08 18:44:30 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   main.c                                            :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/20 18:10:47 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/11 20:02:18 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,23 @@ void	choose_strat(t_data *data, t_strategy strat)
 		complex_sort(data);
 }
 
+void	no_param_error(char *str)
+{
+	ft_putstr_fd(str, 2);
+	exit(1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_data	data;
 
 	if (argc == 1)
-		return (0);
+		no_param_error(argv[0]);
 	init_data(&data);
 	if (!read_input(argc, argv, &data))
 		error(&data);
 	get_disorder(&data);
-	if (data.bench->enabled)
-		init_bench(&data);
+	init_bench(&data);
 	get_disorder(&data);
 	if (data.strategy == ADAPTIVE)
 		choose_strat(&data, data.bench->strategy);

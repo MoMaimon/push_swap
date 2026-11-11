@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/21 15:07:10 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/07 14:07:14 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   parse.c                                           :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/21 15:07:10 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/11 19:14:25 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
-#include <limits.h>
-#include <stddef.h>
 
 int	is_strategy(char *arg)
 {
@@ -67,21 +64,6 @@ int	edite_stack(char *arg, t_data *data, int *number)
 	}
 	return (0);
 }
-
-/*int	process_arg(char *arg, t_data *data, int *flags, int *number)
-{
-if (is_strategy(arg))
-return (parse_strategy(arg, data, &flags[0]));
-if (ft_strcmp("--bench", arg) == 0 && !flags[1])
-{
-data->bench = malloc(sizeof(t_bench));
-if (!data->bench)
-return (0);
-flags[1] = 1;
-return (1);
-}
-return (!edite_stack(arg, data, number));
-}*/
 
 int	read_input(int argc, char **argv, t_data *data)
 {

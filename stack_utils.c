@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/22 15:22:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/07 14:15:25 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   stack_utils.c                                     :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/22 15:22:32 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/11 19:15:18 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
-#include <stdlib.h>
 
 int	add_number(t_list **stack, int number)
 {

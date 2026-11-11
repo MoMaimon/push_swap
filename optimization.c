@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   optimization.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/01 13:59:44 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/03 14:51:09 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   optimization.c                                    :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/11/01 13:59:44 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/11 19:15:37 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// ra <-> rra
-// rb <-> rrb
-// rr <-> rrr
-// ra + rb = rr
-// rra + rrb = rrr
-// pa <-> pb
-// sa <-> sa
-// sb <-> sb
-// sa + sb = ss
 
 int	check_redundant(void *first, void *second, t_list **temp, t_data *data)
 {
