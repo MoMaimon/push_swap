@@ -6,7 +6,7 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 17:59:32 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/08 18:49:11 by mabd-elh         ###   ########.fr       */
+/*   Updated: 2026/11/11 17:30:31 by yaabed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ void	complex_sort(t_data *data);
 void	init_index(t_data *data);
 void	shift_a(t_data *data, int *pivot, int *pushed, int *rots);
 void	shift_b(t_data *data, int *pivot, int *pushed, int *rots);
+void	shift_rr_a(t_data *data, int *pivot, int *pushed, int *rots);
+void	shift_rr_b(t_data *data, int *pivot, int *pushed, int *rots);
+void	rotate_a(t_data *data, int rots);
+void	rotate_rr_a(t_data *data, int rots);
+void	rotate_b(t_data *data, int rots);
+void	rotate_rr_b(t_data *data, int rots);
 int		add_number(t_list **stack, int value);
 int		read_input(int argc, char **argv, t_data *data);
 int		convert_number(const char *nptr, int *result);
@@ -99,5 +105,6 @@ int		process_arg(char *arg, t_data *data, int *flags, int *number);
 int		check_order(t_list *stack);
 int		check_size_a(t_data *data, int size);
 int		check_size_b(t_data *data, int size);
+char	calculat_min_ops(t_data *data, int pivot, int size, char stack);
 
 #endif
