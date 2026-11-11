@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   medium.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/27 12:58:25 by mabd-elh          #+#    #+#             */
-/*   Updated: 2026/11/07 15:07:21 by mabd-elh         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   medium.c                                          :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/27 12:58:25 by mabd-elh         #+#    #+#              */
+/*   Updated: 2026/11/11 21:16:22 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	medium_sort(t_data *data)
 
 	size = ft_lstsize(data->a);
 	largest = get_largest(data);
-	buckets = max(1, ft_sqrt(size) / 2);
+	buckets = max(2, ft_sqrt(size) / 2);
 	i = buckets - 1;
 	while (i >= 0)
 	{

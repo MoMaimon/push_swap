@@ -6,37 +6,19 @@
 /*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/20 18:10:47 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/11 20:06:11 by mabd-elh        ###   ########.fr        */
+/*   Updated: 2026/11/11 21:20:30 by mabd-elh        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-
-void	print_stacks(t_list *a, t_list *b)
-{
-	while (a != NULL || b != NULL)
-	{
-		if (a != NULL && ft_lstsize(a) >= ft_lstsize(b))
-		{
-			printf("%d", *((int *) a->content));
-			a = a->next;
-		}
-		printf("\t");
-		if (b != NULL && ft_lstsize(b) > ft_lstsize(a))
-		{
-			printf("%d", *((int *) b->content));
-			b = b->next;
-		}
-		printf("\n");
-	}
-	printf("_\t_\n");
-	printf("a\tb\n");
-	printf("---------------------------\n");
-}
 
 void	choose_strat(t_data *data, t_strategy strat)
 {
+	if (ft_lstsize(data->a) <= 5)
+	{
+		complex_sort(data);
+		return ;
+	}
 	if (strat == SIMPLE)
 		simple_sort(data);
 	else if (strat == MEDIUM)
