@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   checker_bonus.c                                   :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: mabd-elh <mabd-elh@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/04 15:27:33 by mabd-elh         #+#    #+#              */
-/*   Updated: 2026/11/04 16:50:21 by mabd-elh        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabd-elh <mabd-elh@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/04 15:27:33 by mabd-elh          #+#    #+#             */
+/*   Updated: 2026/11/12 15:22:28 by mabd-elh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-#include <stdio.h>
 
 void	check_and_do_op(t_data *data, char *op)
 {
@@ -39,6 +38,28 @@ void	check_and_do_op(t_data *data, char *op)
 		ss(data);
 }
 
+static int	process_inp(char *argv, t_data *data, int *number)
+{
+	int		count_input;
+	char	**input;
+
+	input = ft_split(argv, ' ');
+	if (!input)
+		return (0);
+	count_input = 0;
+	while (input[count_input] != NULL)
+	{
+		if (edite_stack(input[count_input], data, number))
+		{
+			free_all(input);
+			return (0);
+		}
+		count_input++;
+	}
+	free_all(input);
+	return (1);
+}
+
 void	apply_sort(t_data *data)
 {
 	char	*line;
@@ -64,7 +85,7 @@ int	main(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (edite_stack(argv[i], &data, &number))
+		if (!process_inp(argv[i], &data, &number))
 			error(&data);
 		i++;
 	}
