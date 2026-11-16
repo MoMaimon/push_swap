@@ -1,4 +1,4 @@
-*This activity has been created as part of the 42 curriculum by mabd-elh, yaabed*
+*This project has been created as part of the 42 curriculum by mabd-elh, yaabed*
 
 # Push_swap
 
