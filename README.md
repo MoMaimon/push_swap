@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by mabd-elh, yaabed.*
+*This activity has been created as part of the 42 curriculum by mabd-elh, yaabed*
 
 # Push_swap
 
@@ -90,4 +90,8 @@ The work was divided between the two team members as follows:
 *   **Algorithmic Complexity & Big-O Notation:** [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
 *   **Push Swap visulizer:** [Push Swap visulizer](https://github.com/o-reo/push_swap_visualizer)
 *   **Sorting Algorithms Visualized:** [VisuAlgo](https://visualgo.net/en/sorting)
-*   **AI Usage:** AI was used to create the README file. No AI was used to write the core sorting logic or bypass the learning objectives of the curriculum.
+*   **AI Usage:** AI was used for the following tasks only:
+    *   Writing and formatting the README.md file.
+    *   Explaining algorithmic concepts (e.g., Big-O complexity, how Quick Sort and Chunk Sort work) during the learning phase.
+
+    AI was **not** used to write the core sorting logic, the operations, the parsing, or any other part of the source code.
