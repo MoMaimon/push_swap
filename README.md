@@ -52,20 +52,38 @@ In accordance with the project requirements, four distinct sorting strategies ha
 ### 1. The Disorder Metric
 Before sorting, the program analyzes stack `a` to determine its disorder—a value between $0$ (perfectly sorted) and $1$ (worst-case reverse sorted). It is calculated by counting how many pairs of numbers are out of order relative to the total possible pairs.
 
-### 2. Simple Algorithm — $O(n^2)$
+### 2. Simple Algorithm — Insertion Sort, $O(n^2)$
 * **Threshold:** Low disorder (Disorder $< 0.2$)
-* **Explanation:** For inputs that are already nearly sorted or very small, complex overhead is unnecessary. This algorithm relies on a highly optimized adaptation of Selection/Insertion sort, keeping the number of instructions drastically low when only a few elements are out of place.
+* **Explanation:** For inputs that are already nearly sorted or very small, complex overhead is unnecessary. This strategy uses **Insertion Sort** adapted to the two-stack model: elements are moved to stack `b` and then inserted back into stack `a` at their correct position, keeping the number of instructions very low when only a few elements are out of place.
 
-### 3. Medium Algorithm — $O(n\sqrt{n})$
+### 3. Medium Algorithm — Chunk Sort, $O(n\sqrt{n})$
 * **Threshold:** Medium disorder ($0.2 \le$ Disorder $< 0.5$)
-* **Explanation:** When the data has moderate disorder, this chunk-based strategy is employed. The stack is virtually divided into $\sqrt{n}$ chunks. Elements are pushed to stack `b` based on their chunk affiliation, which pre-sorts them in a rough funnel before they are meticulously pushed back to stack `a`.
+* **Explanation:** When the data has moderate disorder, this **Chunk Sort** strategy is employed. The stack is virtually divided into $\sqrt{n}$ chunks. Elements are pushed to stack `b` based on their chunk affiliation, which pre-sorts them in a rough funnel before they are meticulously pushed back to stack `a` in order.
 
-### 4. Complex Algorithm — $O(n \log n)$
+### 4. Complex Algorithm — Quick Sort, $O(n \log n)$
 * **Threshold:** High disorder (Disorder $\ge 0.5$)
-* **Explanation:** For completely random and large datasets, a time-optimized algorithm is strictly required. This is implemented via a Radix Sort / Quicksort adaptation utilizing stack partitioning, guaranteeing scalable performance even at 500+ elements.
+* **Explanation:** For completely random and large datasets, a time-optimized algorithm is strictly required. This is implemented via a **Quick Sort** adaptation using stack partitioning: a pivot is chosen, elements are split between stacks `a` and `b` around it, and the partitions are then sorted recursively, guaranteeing scalable performance even at 500+ elements.
 
 ### 5. Adaptive Strategy
 The core of our push_swap program's intelligence lies in the `--adaptive` default routing. By analyzing the disorder metric upfront, it actively branches into the Simple, Medium, or Complex strategy. This guarantees that an already sorted stack isn't unnecessarily churned through a complex $O(n \log n)$ algorithm, saving thousands of operations in edge cases.
+
+## Contributions
+
+The work was divided between the two team members as follows:
+
+### yaabed
+*   **Parsing:** Implemented the full input parsing with all its files (argument handling, validation, error management, duplicate and overflow checks).
+*   **Algorithms:** Implemented the **Simple** (Insertion Sort) and **Complex** (Quick Sort) algorithms.
+*   **Stack creation:** Built the stack data structure and its initialization from the parsed input.
+*   **Optimization:** Optimized the **Complex** algorithm to reduce the number of operations.
+
+### mabd-elh
+*   **Operations:** Implemented all the operations that manipulate the stacks (`sa`, `sb`, `ss`, `pa`, `pb`, `ra`, `rb`, `rr`, `rra`, `rrb`, `rrr`).
+*   **Main & Checker:** Implemented the `push_swap` main program and the `checker` program.
+*   **Bonus:** Implemented the bonus part.
+*   **Disorder:** Implemented the disorder metric calculation.
+*   **Algorithms:** Implemented the **Medium** algorithm (Chunk Sort).
+*   **Optimization:** Optimized the **Medium** and **Simple** algorithms.
 
 ## Resources
 
